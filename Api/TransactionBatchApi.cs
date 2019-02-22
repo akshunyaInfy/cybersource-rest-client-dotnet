@@ -32,8 +32,8 @@ namespace CyberSource.Api
         /// </remarks>
         /// <exception cref="CyberSource.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The batch id assigned for the template.</param>
-        /// <returns></returns>
-        void PtsV1TransactionBatchesIdGet (string id);
+        /// <returns>PtsV1TransactionBatchesIdGet200Response</returns>
+        PtsV1TransactionBatchesIdGet200Response PtsV1TransactionBatchesIdGet (string id);
 
         /// <summary>
         /// Get an individual batch file Details processed through the Offline Transaction Submission Services
@@ -43,8 +43,8 @@ namespace CyberSource.Api
         /// </remarks>
         /// <exception cref="CyberSource.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The batch id assigned for the template.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> PtsV1TransactionBatchesIdGetWithHttpInfo (string id);
+        /// <returns>ApiResponse of PtsV1TransactionBatchesIdGet200Response</returns>
+        ApiResponse<PtsV1TransactionBatchesIdGet200Response> PtsV1TransactionBatchesIdGetWithHttpInfo (string id);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -55,8 +55,8 @@ namespace CyberSource.Api
         /// </remarks>
         /// <exception cref="CyberSource.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The batch id assigned for the template.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task PtsV1TransactionBatchesIdGetAsync (string id);
+        /// <returns>Task of PtsV1TransactionBatchesIdGet200Response</returns>
+        System.Threading.Tasks.Task<PtsV1TransactionBatchesIdGet200Response> PtsV1TransactionBatchesIdGetAsync (string id);
 
         /// <summary>
         /// Get an individual batch file Details processed through the Offline Transaction Submission Services
@@ -66,8 +66,8 @@ namespace CyberSource.Api
         /// </remarks>
         /// <exception cref="CyberSource.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The batch id assigned for the template.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> PtsV1TransactionBatchesIdGetAsyncWithHttpInfo (string id);
+        /// <returns>Task of ApiResponse (PtsV1TransactionBatchesIdGet200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<PtsV1TransactionBatchesIdGet200Response>> PtsV1TransactionBatchesIdGetAsyncWithHttpInfo (string id);
         #endregion Asynchronous Operations
     }
 
@@ -185,10 +185,11 @@ namespace CyberSource.Api
         /// </summary>
         /// <exception cref="CyberSource.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The batch id assigned for the template.</param>
-        /// <returns></returns>
-        public void PtsV1TransactionBatchesIdGet (string id)
+        /// <returns>PtsV1TransactionBatchesIdGet200Response</returns>
+        public PtsV1TransactionBatchesIdGet200Response PtsV1TransactionBatchesIdGet (string id)
         {
-             PtsV1TransactionBatchesIdGetWithHttpInfo(id);
+             ApiResponse<PtsV1TransactionBatchesIdGet200Response> localVarResponse = PtsV1TransactionBatchesIdGetWithHttpInfo(id);
+             return localVarResponse.Data;
         }
 
         /// <summary>
@@ -196,8 +197,8 @@ namespace CyberSource.Api
         /// </summary>
         /// <exception cref="CyberSource.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The batch id assigned for the template.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> PtsV1TransactionBatchesIdGetWithHttpInfo (string id)
+        /// <returns>ApiResponse of PtsV1TransactionBatchesIdGet200Response</returns>
+        public ApiResponse< PtsV1TransactionBatchesIdGet200Response > PtsV1TransactionBatchesIdGetWithHttpInfo (string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -241,9 +242,9 @@ namespace CyberSource.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<PtsV1TransactionBatchesIdGet200Response>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                null);
+                (PtsV1TransactionBatchesIdGet200Response) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PtsV1TransactionBatchesIdGet200Response)));
         }
 
         /// <summary>
@@ -251,10 +252,11 @@ namespace CyberSource.Api
         /// </summary>
         /// <exception cref="CyberSource.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The batch id assigned for the template.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task PtsV1TransactionBatchesIdGetAsync (string id)
+        /// <returns>Task of PtsV1TransactionBatchesIdGet200Response</returns>
+        public async System.Threading.Tasks.Task<PtsV1TransactionBatchesIdGet200Response> PtsV1TransactionBatchesIdGetAsync (string id)
         {
-             await PtsV1TransactionBatchesIdGetAsyncWithHttpInfo(id);
+             ApiResponse<PtsV1TransactionBatchesIdGet200Response> localVarResponse = await PtsV1TransactionBatchesIdGetAsyncWithHttpInfo(id);
+             return localVarResponse.Data;
 
         }
 
@@ -263,14 +265,14 @@ namespace CyberSource.Api
         /// </summary>
         /// <exception cref="CyberSource.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The batch id assigned for the template.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> PtsV1TransactionBatchesIdGetAsyncWithHttpInfo (string id)
+        /// <returns>Task of ApiResponse (PtsV1TransactionBatchesIdGet200Response)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<PtsV1TransactionBatchesIdGet200Response>> PtsV1TransactionBatchesIdGetAsyncWithHttpInfo (string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling TransactionBatchApi->PtsV1TransactionBatchesIdGet");
 
-            var localVarPath = "/pts/v1/transaction-batches/{id}";
+            var localVarPath = $"/pts/v1/transaction-batches/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -308,9 +310,9 @@ namespace CyberSource.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<PtsV1TransactionBatchesIdGet200Response>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                null);
+                (PtsV1TransactionBatchesIdGet200Response) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PtsV1TransactionBatchesIdGet200Response)));
         }
 
     }

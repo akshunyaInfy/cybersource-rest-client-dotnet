@@ -213,7 +213,7 @@ namespace CyberSource.Api
             if (endTime == null)
                 throw new ApiException(400, "Missing required parameter 'endTime' when calling NotificationOfChangesApi->GetNotificationOfChangeReport");
 
-            var localVarPath = "/reporting/v3/notification-of-changes";
+            var localVarPath = $"/reporting/v3/notification-of-changes";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -287,7 +287,7 @@ namespace CyberSource.Api
             if (endTime == null)
                 throw new ApiException(400, "Missing required parameter 'endTime' when calling NotificationOfChangesApi->GetNotificationOfChangeReport");
 
-            var localVarPath = "/reporting/v3/notification-of-changes";
+            var localVarPath = $"/reporting/v3/notification-of-changes";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);

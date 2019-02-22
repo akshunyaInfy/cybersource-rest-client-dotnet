@@ -31,10 +31,9 @@ namespace CyberSource.Api
         /// 
         /// </remarks>
         /// <exception cref="CyberSource.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="reportName">Name of the Report to Create</param>
         /// <param name="requestBody">Report subscription request payload</param>
         /// <returns></returns>
-        void CreateSubscription (string reportName, RequestBody requestBody);
+        void CreateSubscription (RequestBody requestBody);
 
         /// <summary>
         /// Create Report Subscription for a report name by organization
@@ -43,10 +42,9 @@ namespace CyberSource.Api
         /// 
         /// </remarks>
         /// <exception cref="CyberSource.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="reportName">Name of the Report to Create</param>
         /// <param name="requestBody">Report subscription request payload</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> CreateSubscriptionWithHttpInfo (string reportName, RequestBody requestBody);
+        ApiResponse<Object> CreateSubscriptionWithHttpInfo (RequestBody requestBody);
         /// <summary>
         /// Delete subscription of a report name by organization
         /// </summary>
@@ -117,10 +115,9 @@ namespace CyberSource.Api
         /// 
         /// </remarks>
         /// <exception cref="CyberSource.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="reportName">Name of the Report to Create</param>
         /// <param name="requestBody">Report subscription request payload</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task CreateSubscriptionAsync (string reportName, RequestBody requestBody);
+        System.Threading.Tasks.Task CreateSubscriptionAsync (RequestBody requestBody);
 
         /// <summary>
         /// Create Report Subscription for a report name by organization
@@ -129,10 +126,9 @@ namespace CyberSource.Api
         /// 
         /// </remarks>
         /// <exception cref="CyberSource.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="reportName">Name of the Report to Create</param>
         /// <param name="requestBody">Report subscription request payload</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> CreateSubscriptionAsyncWithHttpInfo (string reportName, RequestBody requestBody);
+        System.Threading.Tasks.Task<ApiResponse<Object>> CreateSubscriptionAsyncWithHttpInfo (RequestBody requestBody);
         /// <summary>
         /// Delete subscription of a report name by organization
         /// </summary>
@@ -310,31 +306,26 @@ namespace CyberSource.Api
         /// Create Report Subscription for a report name by organization 
         /// </summary>
         /// <exception cref="CyberSource.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="reportName">Name of the Report to Create</param>
         /// <param name="requestBody">Report subscription request payload</param>
         /// <returns></returns>
-        public void CreateSubscription (string reportName, RequestBody requestBody)
+        public void CreateSubscription (RequestBody requestBody)
         {
-             CreateSubscriptionWithHttpInfo(reportName, requestBody);
+             CreateSubscriptionWithHttpInfo(requestBody);
         }
 
         /// <summary>
         /// Create Report Subscription for a report name by organization 
         /// </summary>
         /// <exception cref="CyberSource.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="reportName">Name of the Report to Create</param>
         /// <param name="requestBody">Report subscription request payload</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> CreateSubscriptionWithHttpInfo (string reportName, RequestBody requestBody)
+        public ApiResponse<Object> CreateSubscriptionWithHttpInfo (RequestBody requestBody)
         {
-            // verify the required parameter 'reportName' is set
-            if (reportName == null)
-                throw new ApiException(400, "Missing required parameter 'reportName' when calling ReportSubscriptionsApi->CreateSubscription");
             // verify the required parameter 'requestBody' is set
             if (requestBody == null)
                 throw new ApiException(400, "Missing required parameter 'requestBody' when calling ReportSubscriptionsApi->CreateSubscription");
 
-            var localVarPath = $"/reporting/v3/report-subscriptions/{reportName}";
+            var localVarPath = $"/reporting/v3/report-subscriptions";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -356,7 +347,6 @@ namespace CyberSource.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (reportName != null) localVarPathParams.Add("reportName", Configuration.ApiClient.ParameterToString(reportName)); // path parameter
             if (requestBody != null && requestBody.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(requestBody); // http body (model) parameter
@@ -389,12 +379,11 @@ namespace CyberSource.Api
         /// Create Report Subscription for a report name by organization 
         /// </summary>
         /// <exception cref="CyberSource.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="reportName">Name of the Report to Create</param>
         /// <param name="requestBody">Report subscription request payload</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task CreateSubscriptionAsync (string reportName, RequestBody requestBody)
+        public async System.Threading.Tasks.Task CreateSubscriptionAsync (RequestBody requestBody)
         {
-             await CreateSubscriptionAsyncWithHttpInfo(reportName, requestBody);
+             await CreateSubscriptionAsyncWithHttpInfo(requestBody);
 
         }
 
@@ -402,19 +391,15 @@ namespace CyberSource.Api
         /// Create Report Subscription for a report name by organization 
         /// </summary>
         /// <exception cref="CyberSource.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="reportName">Name of the Report to Create</param>
         /// <param name="requestBody">Report subscription request payload</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> CreateSubscriptionAsyncWithHttpInfo (string reportName, RequestBody requestBody)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> CreateSubscriptionAsyncWithHttpInfo (RequestBody requestBody)
         {
-            // verify the required parameter 'reportName' is set
-            if (reportName == null)
-                throw new ApiException(400, "Missing required parameter 'reportName' when calling ReportSubscriptionsApi->CreateSubscription");
             // verify the required parameter 'requestBody' is set
             if (requestBody == null)
                 throw new ApiException(400, "Missing required parameter 'requestBody' when calling ReportSubscriptionsApi->CreateSubscription");
 
-            var localVarPath = "/reporting/v3/report-subscriptions/{reportName}";
+            var localVarPath = $"/reporting/v3/report-subscriptions";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -436,7 +421,6 @@ namespace CyberSource.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (reportName != null) localVarPathParams.Add("reportName", Configuration.ApiClient.ParameterToString(reportName)); // path parameter
             if (requestBody != null && requestBody.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(requestBody); // http body (model) parameter
@@ -555,7 +539,7 @@ namespace CyberSource.Api
             if (reportName == null)
                 throw new ApiException(400, "Missing required parameter 'reportName' when calling ReportSubscriptionsApi->DeleteSubscription");
 
-            var localVarPath = "/reporting/v3/report-subscriptions/{reportName}";
+            var localVarPath = $"/reporting/v3/report-subscriptions/{reportName}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -617,7 +601,7 @@ namespace CyberSource.Api
         public ApiResponse< ReportingV3ReportSubscriptionsGet200Response > GetAllSubscriptionsWithHttpInfo ()
         {
 
-            var localVarPath = "/reporting/v3/report-subscriptions";
+            var localVarPath = $"/reporting/v3/report-subscriptions";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -679,7 +663,7 @@ namespace CyberSource.Api
         public async System.Threading.Tasks.Task<ApiResponse<ReportingV3ReportSubscriptionsGet200Response>> GetAllSubscriptionsAsyncWithHttpInfo ()
         {
 
-            var localVarPath = "/reporting/v3/report-subscriptions";
+            var localVarPath = $"/reporting/v3/report-subscriptions";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -813,7 +797,7 @@ namespace CyberSource.Api
             if (reportName == null)
                 throw new ApiException(400, "Missing required parameter 'reportName' when calling ReportSubscriptionsApi->GetSubscription");
 
-            var localVarPath = "/reporting/v3/report-subscriptions/{reportName}";
+            var localVarPath = $"/reporting/v3/report-subscriptions/{reportName}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);

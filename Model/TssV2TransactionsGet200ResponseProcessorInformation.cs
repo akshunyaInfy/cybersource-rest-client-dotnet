@@ -44,7 +44,7 @@ namespace CyberSource.Model
         /// <param name="CardVerification">CardVerification.</param>
         /// <param name="AchVerification">AchVerification.</param>
         /// <param name="ElectronicVerificationResults">ElectronicVerificationResults.</param>
-        public TssV2TransactionsGet200ResponseProcessorInformation(TssV2TransactionsGet200ResponseProcessorInformationProcessor Processor = default(TssV2TransactionsGet200ResponseProcessorInformationProcessor), string TransactionId = default(string), string NetworkTransactionId = default(string), string ResponseId = default(string), string ProviderTransactionId = default(string), string ApprovalCode = default(string), string ResponseCode = default(string), PtsV2PaymentsPost201ResponseProcessorInformationAvs Avs = default(PtsV2PaymentsPost201ResponseProcessorInformationAvs), TssV2TransactionsGet200ResponseProcessorInformationCardVerification CardVerification = default(TssV2TransactionsGet200ResponseProcessorInformationCardVerification), TssV2TransactionsGet200ResponseProcessorInformationAchVerification AchVerification = default(TssV2TransactionsGet200ResponseProcessorInformationAchVerification), TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults ElectronicVerificationResults = default(TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults))
+        public TssV2TransactionsGet200ResponseProcessorInformation(TssV2TransactionsGet200ResponseProcessorInformationProcessor Processor = default(TssV2TransactionsGet200ResponseProcessorInformationProcessor), string TransactionId = default(string), string NetworkTransactionId = default(string), string ResponseId = default(string), string ProviderTransactionId = default(string), string ApprovalCode = default(string), string ResponseCode = default(string), TssV2TransactionsGet200ResponseProcessorInformationAvs Avs = default(TssV2TransactionsGet200ResponseProcessorInformationAvs), TssV2TransactionsGet200ResponseProcessorInformationCardVerification CardVerification = default(TssV2TransactionsGet200ResponseProcessorInformationCardVerification), TssV2TransactionsGet200ResponseProcessorInformationAchVerification AchVerification = default(TssV2TransactionsGet200ResponseProcessorInformationAchVerification), TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults ElectronicVerificationResults = default(TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults))
         {
             this.Processor = Processor;
             this.TransactionId = TransactionId;
@@ -111,7 +111,7 @@ namespace CyberSource.Model
         /// Gets or Sets Avs
         /// </summary>
         [DataMember(Name="avs", EmitDefaultValue=false)]
-        public PtsV2PaymentsPost201ResponseProcessorInformationAvs Avs { get; set; }
+        public TssV2TransactionsGet200ResponseProcessorInformationAvs Avs { get; set; }
 
         /// <summary>
         /// Gets or Sets CardVerification

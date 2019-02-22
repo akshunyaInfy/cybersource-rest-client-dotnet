@@ -317,12 +317,6 @@ namespace CyberSource.Model
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for IssueNumber, length must be less than 5.", new [] { "IssueNumber" });
             }
 
-            // Type (string) maxLength
-            if(this.Type != null && this.Type.Length > 3)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Type, length must be less than 3.", new [] { "Type" });
-            }
-
             // AccountEncoderId (string) maxLength
             if(this.AccountEncoderId != null && this.AccountEncoderId.Length > 3)
             {
