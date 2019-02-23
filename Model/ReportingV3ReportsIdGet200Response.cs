@@ -75,7 +75,14 @@ namespace CyberSource.Model
             /// Enum MONTHLY for "MONTHLY"
             /// </summary>
             [EnumMember(Value = "MONTHLY")]
-            MONTHLY
+            MONTHLY,
+
+            /// <summary>
+            /// Enum ADHOC for "ADHOC"
+            /// </summary>
+            [EnumMember(Value = "ADHOC")]
+            ADHOC
+			
         }
 
         /// <summary>

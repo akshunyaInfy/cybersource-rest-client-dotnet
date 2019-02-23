@@ -48,7 +48,13 @@ namespace CyberSource.Model
             /// Enum TextCsv for "text/csv"
             /// </summary>
             [EnumMember(Value = "text/csv")]
-            TextCsv
+            TextCsv,
+
+            /// <summary>
+            /// Enum ApplicationJson for "application/json"
+            /// </summary>
+            [EnumMember(Value = "application/json")]
+            ApplicationJson
         }
 
         /// <summary>
